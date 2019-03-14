@@ -6,6 +6,7 @@
 #ifndef GHOSTPOINT_H
 #define GHOSTPOINT_H
 
+#include <memory>
 #include <eigen3/Eigen/Eigen>
 
 class KDTree;

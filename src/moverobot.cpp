@@ -8,7 +8,7 @@
 
 using namespace std;
 
-bool show_movement = false;
+bool show_movement = true;
 
 void MoveRobot(shared_ptr<Queue> &Q,
                shared_ptr<KDTree> &Tree,
@@ -235,6 +235,8 @@ void RobotMovement(shared_ptr<Queue> Q, shared_ptr<KDTree> Tree,
     // While Robot->goal_reached == false
     while(true) { // will break out when goal is reached
         {
+            // std::cout << "Robot movement loop!" << std::endl;
+
             lock_guard<mutex> lock(Q->cspace->cspace_mutex_);
             elapsed_time = Q->cspace->time_elapsed_;
 

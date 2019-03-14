@@ -7,6 +7,8 @@ using namespace std;
 void visualizer(shared_ptr<KDTree> Tree,
                 shared_ptr<RobotData> Robot,
                 shared_ptr<Queue> Q)
+{}
+/*//
 {
     int resX = 800, resY = 600, ticks = 100;
     double spacing = 1.0; // straighttest:1.0 smalltest:1.0 largetest:5.0
@@ -129,7 +131,7 @@ void visualizer(shared_ptr<KDTree> Tree,
         }
         if(move_switch && !moved) move_switch = false;
         num_obstacles = obstacles.length_;
-        if(moved /*&& !move_switch*/) {
+        if(moved) {
 
             for(int i = 0; i < num_obstacles; i++) {
                 obstacles.ListPop(this_obstacle);
@@ -299,3 +301,4 @@ void visualizer(shared_ptr<KDTree> Tree,
     delete(node_count);
     delete(traj_line);
 }
+//*/

@@ -200,6 +200,8 @@ int main( int argc, char* argv[] )
     cspace->space_has_time_ = false;
     cspace->space_has_theta_ = true;   // Dubin's car model
 
+    std::cout << "CSpace done!" << std::endl;
+
     /// K-D Tree
     // Dubin's model wraps_ theta (4th entry) at 2pi
     Eigen::VectorXi wrap_vec(1);    // 1 wrapping dimension
@@ -210,17 +212,24 @@ int main( int argc, char* argv[] )
     /// Parameters
     string alg_name = "RRTx";       // running RRTx
     string obstacle_file = argv[1]; // obstacle file
-    double plan_time = 30.0;        // plan *ONLY* for this long
+
+    std::cout << "Param init. Halfway" << std::endl;
+
+    double plan_time = 60.0;        // plan *ONLY* for this long
     double slice_time = 1.0/100;    // iteration time limit
     double delta = 5.0;             // distance between graph nodes
     double ball_const = 100.0;      // search d-ball radius (10.0 worked)
     double change_thresh = 1.0;     // node change detection
     double goal_thresh = 0.5;       // goal detection
     bool move_robot = true;         // move robot after plan_time/slice_time
-    int num_threads = 5;            // number of main loop threads to spawn
+    int num_threads = 0;            // number of main loop threads to spawn
+
+    std::cout << "Begin. Read obstacles from file" << std::endl;
 
     /// Read in Obstacles
     Obstacle::ReadObstaclesFromFile(obstacle_file, cspace);
+
+    std::cout << "Read obstacles from file" << std::endl;
 
     // Create a new problem for RRTx
     Problem problem = Problem(alg_name, cspace, plan_time, slice_time, delta,

@@ -1,7 +1,7 @@
 #ifndef VISUALIZER_H
 #define VISUALIZER_H
 
-#include <SceneGraph/SceneGraph.h>
+// #include <SceneGraph/SceneGraph.h>
 #include <DRRT/drrt.h>
 
 // Visualizer function for DRRT

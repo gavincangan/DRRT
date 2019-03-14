@@ -3,14 +3,14 @@ project( DRRT )
 cmake_minimum_required( VERSION 2.8 )
 
 set( CMAKE_BUILD_TYPE Default )
+set(CMAKE_CXX_STANDARD 11)
 
 list( APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake_modules )
 set( CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake_modules ${CMAKE_MODULE_PATH} )
-set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall" )
+set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -std=c++11 -Wall" )
 
 find_package( Eigen3        REQUIRED )
 find_package( Pangolin      REQUIRED )
-find_package( SceneGraph    REQUIRED )
 find_package( Bullet        REQUIRED )
 
 set( _INCLUDE_DIRS
@@ -18,13 +18,11 @@ set( _INCLUDE_DIRS
 		${CMAKE_CURRENT_SOURCE_DIR}/include
                 ${EIGEN3_INCLUDE_DIRS}
                 ${Pangolin_INCLUDE_DIRS}
-                ${SceneGraph_INCLUDE_DIRS}
                 ${BULLET_INCLUDE_DIR}
 		)
 
 set( _LIBRARIES
                 ${Pangolin_LIBRARIES}
-                ${SceneGraph_LIBRARIES}
                 ${BULLET_LIBRARIES}
 		)
 
@@ -45,7 +43,7 @@ set( HDRS
                 include/DRRT/drrt.h
                 include/DRRT/kdtree.h
                 include/DRRT/heap.h
-                include/DRRT/ghostpoint.h
+                include/DRRT/ghostPoint.h
                 include/DRRT/list.h
                 include/DRRT/jlist.h
                 include/DRRT/kdtreenode.h

@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/bgavin/repos/DRRT/src/construct.c
+DRRT/triangulate.h
+-
+math.h
+-
+
+/home/bgavin/repos/DRRT/src/misc.c
+DRRT/triangulate.h
+-
+sys/time.h
+-
+math.h
+-
+
+/home/bgavin/repos/DRRT/src/monotone.c
+DRRT/triangulate.h
+-
+math.h
+-
+
+/home/bgavin/repos/DRRT/src/tri.c
+DRRT/triangulate.h
+-
+sys/time.h
+-
+
+include/DRRT/triangulate.h
+sys/types.h
+-
+stdlib.h
+-
+stdio.h
+-
+string.h
+-
+
